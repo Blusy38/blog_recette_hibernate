@@ -24,13 +24,13 @@
 				<c:choose>
 					<c:when test="${membre.idMembre == null || membre.idMembre ==0}">
 						<input type="submit" name="suscrib" value="Je m'inscris"
-							class="primaryBtn login" />
+							class="submitBtn" />
 					</c:when>
 					<c:otherwise>
 						<input type="submit" name="update" value="Mise à jour"
-							class="primaryBtn login" />
+							class="submitBtn" />
 						<input type="submit" name="delete" value="Supprimer"
-							class="primaryBtn login" />
+							class="submitBtn" />
 					</c:otherwise>
 				</c:choose>
 			</form>

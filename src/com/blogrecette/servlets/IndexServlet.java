@@ -14,7 +14,6 @@ import com.blogrecette.pojos.Categorie;
 import com.blogrecette.pojos.Recette;
 import com.blogrecette.services.CategorieManager;
 import com.blogrecette.services.RecetteManager;
-import com.blogrecette.services.TagManager;
 
 
 /**
@@ -62,13 +61,12 @@ public class IndexServlet extends HttpServlet {
 		//On recupere les variables en string
 		String idCategorie=request.getParameter("idCategorie");  
 		String idMembre=request.getParameter("idMembre"); 
-		String idTag=request.getParameter("idTag"); 
 
 		//On crée l'objet liste recettes
 		List<Recette> recettes = null;
 
 		//On verifi si il y a un categorie demandé via idCategorie 
-		if(idCategorie ==null  && idMembre==null && idTag==null){ 
+		if(idCategorie ==null  && idMembre==null){ 
 
 			//On recupere toutes les recettes
 			recettes = recetteManager.getAll();
@@ -97,17 +95,6 @@ public class IndexServlet extends HttpServlet {
 			//Si il n'y a pas de resulat alors on affiche un message.
 			if(recettes.isEmpty() ) {
 				request.setAttribute("msgEmpty", "<h1>Vous n'avez pas encore créé de recette !</h1>Pourquoi ne pas commencer maintenant ?");
-			}
-		} else if (idTag!=null) {
-
-			int idTagRecette=Integer.parseInt(request.getParameter("idTag")); 
-
-			//On recupere toutes les recettes par membres
-			recettes = recetteManager.getAllByidTag(idTagRecette);
-			
-			//Si il n'y a pas de resulat alors on affiche un message.
-			if(recettes.isEmpty() ) {
-				request.setAttribute("msgEmpty", "<h1>Oups! Tag vide.</h1> Pourquoi ne pas ajouter une recette dés maintenant ?");
 			}
 		}
 		//On envoi le resulat des requettes a la jsp 
