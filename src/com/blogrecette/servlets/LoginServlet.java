@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 
 		String mdp = request.getParameter( "mdp" );
 		if ( mdp.isEmpty() ) {
-			erreur += "<li>Fuck off !!!mdp</li>";
+			erreur += "<li>Nom d'utilisateir ou mot de passe erroné.</li>";
 		}
 
 		//Si la variable erreur est differente de vide alors on affiche la page JSP
@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
 
 				//On verifi si on a un retour de la base
 				if (membre==null) {
-					erreur += "<li>Fuck off !!!</li>";
+					erreur += "<li>Nom d'utilisateir ou mot de passe erroné.</li>";
 					request.setAttribute("erreur", erreur);
 
 					/* Transmission de la paire d'objets request/response à notre JSP */
@@ -93,7 +93,7 @@ public class LoginServlet extends HttpServlet {
 					//Verifi si les mdp bdd et saisi sont les memes
 					String mdpBddString = membre.getMdp();
 					if ( !mdpBddString.equals(mdp)) {
-						erreur += "<li>Fuck off !!!</li>";
+						erreur += "<li>Nom d'utilisateir ou mot de passe erroné.</li>";
 						request.setAttribute("erreur", erreur);
 
 						/* Transmission de la paire d'objets request/response à notre JSP */

@@ -41,7 +41,7 @@ public class Recette {
 	private Collection<Ingredient> ingredients;
 	
     // Many to many bi-directionnel
-    @ManyToMany(/*mappedBy = "recettes",*/ fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Tag> tags;
 
 	@Column(name = "titre")

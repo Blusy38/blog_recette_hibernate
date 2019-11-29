@@ -8,7 +8,7 @@
 				placeholder="Votre email *" value="<c:out value="${membre.email}"/>" /><br />
 			<input id="mdp" name="mdp" type="password" class="inputChamp"
 				placeholder="Votre mot de passe *" value="<c:out value="${membre.mdp}"/>" /><br />
-			<input type="submit" name="login"value="Je me connect" class="submitBtn" />
+			<input type="submit" name="login"value="Connexion" class="submitBtn" />
 		</form>
 	</div>
 		<c:if test="${erreur != null}">
