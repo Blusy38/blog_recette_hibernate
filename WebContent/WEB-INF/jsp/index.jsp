@@ -30,13 +30,11 @@
 						<c:choose>
 							<c:when test="${empty membre.idMembre || membre.idMembre==0}">
 								<a href="inscription"><img class="imgRecette"
-									src="img/defaut.jpg" width="300px" height="242px"
-									alt="Ajoutez une recette."> </a>
+									src="img/defaut.jpg" alt="Ajoutez une recette."> </a>
 							</c:when>
 							<c:otherwise>
 								<a href="editrecette?id=0"><img class="imgRecette"
-									src="img/defaut.jpg" width="300px" height="242px"
-									alt="Ajoutez une recette."> </a>
+									src="img/defaut.jpg" alt="Ajoutez une recette."> </a>
 							</c:otherwise>
 						</c:choose>
 
@@ -49,13 +47,9 @@
 				<div id="cadre">
 					<div>
 						<header>
-							<a href="recette?id=${recettes.idRecette}"><h1
-									class="titreRecette">${recettes.titre}</h1></a>
-							<c:if test="${recettes.membre.idMembre == membre.idMembre}">
-								<a class="primaryBtn login"
-									href="editrecette?id=${recettes.idRecette}">Modifier</a>
-								<br>
-							</c:if>
+							<a href="recette?id=${recettes.idRecette}">
+								<h1 class="titreRecette">${recettes.titre}</h1>
+							</a>
 							<time>
 								<fmt:formatDate value="${recettes.dateCreation}" type="date"
 									dateStyle="full" />
@@ -64,8 +58,8 @@
 					</div>
 					<div>
 						<a href="recette?id=${recettes.idRecette}"><img
-							class="imgRecette" src="img/${recettes.photo}" width="300px"
-							height="242px" alt="Tartiflette" /> </a>
+							class="imgRecette" src="img/${recettes.photo}"
+							alt="${recettes.titre}" /> </a>
 					</div>
 					<div>
 						<c:forEach var="i" begin="1" end="${recettes.moyNote}" step="1">
@@ -74,6 +68,11 @@
 						<c:forEach var="i" begin="${recettes.moyNote+1}" end="5" step="1">
 							<span class="fa fa-star"></span>
 						</c:forEach>
+						<c:if test="${recettes.membre.idMembre == membre.idMembre}">
+							<a class="primaryBtn login"
+								href="editrecette?id=${recettes.idRecette}">Modifier</a>
+							<br>
+						</c:if>
 						<p>${recettes.description}</p>
 					</div>
 				</div>

@@ -33,13 +33,13 @@
 					<c:choose>
 					<c:when test="${param['idrecette'] != null}">
 						<input type="submit" name="Ajouter" value="Ajouter"
-							class="submitBtn" />
+							class="primaryBtn login" />
 					</c:when>
 					<c:otherwise>
 						<input type="submit" name="update" value="Modifier"
-							class="submitBtn" />
+							class="primaryBtn login" />
 						<input type="submit" name="delete" value="Supprimer"
-							class="submitBtn" />
+							class="primaryBtn login" />
 					</c:otherwise>
 				</c:choose>
 				</form>

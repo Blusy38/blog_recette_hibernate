@@ -5,6 +5,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
@@ -13,9 +14,6 @@
 <body>
 	<header id="header">
 		<a href="index"><h1 id="titreBlog">Mon Blog de Recettes</h1></a>
-		<div style="width: 100%; margin: 20px auto; text-align: center;">Bienvenue
-			${membre.nom} sur mon blog de recettes</div>
-
 		<div id="loginBar">
 			<div class="login">
 				<c:choose>
