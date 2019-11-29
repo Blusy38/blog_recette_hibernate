@@ -29,7 +29,7 @@
 			</c:forEach>
 		</div>
 		<div id="rightrecette">
-			<h2 id="titreIngredient">Ingrédients</h2>
+			<h1 id="titreIngredient">Ingrédients</h1>
 			<ul>
 				<c:forEach items="${ingredients}" var="ingredients">
 					<li>${ingredients.quantite}${ingredients.unit}

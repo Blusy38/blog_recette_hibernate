@@ -3,13 +3,19 @@ html, body {
 }
 
 body {
-	color: #bfbfbf;
-	background: black;
+	color: #000000;
+	background: #bfbfbf;
 	font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
 h1 {
+	color: black;
+	font-size: 18px;
+}
+
+h2 {
 	color: white;
+	font-size: 18px;
 }
 
 .imgRecette {
@@ -46,8 +52,8 @@ h1 {
 	padding: 0 1rem;
 	color: white;
 	text-decoration: none;
-	background-color: #f47321;
-	border: 2px solid #f47321;
+	background-color: #333534;
+	border: 2px solid #333534;
 	line-height: 2rem;
 	border-radius: 2rem;
 	font-size: 1rem;
@@ -57,8 +63,8 @@ h1 {
 }
 
 .submitBtn {
-	color: #fff !important;
-	background-color: #f47321;
+	color: #333534 !important;
+	background-color: #bfbfbf;
 	cursor: pointer;
 	margin-top: 10px;
 	border: none;
@@ -110,12 +116,12 @@ h1 {
 
 .divCommentaire {
 	border: 2px solid;
-	background-color: #000000;
+	background-color: #bfbfbf;
 	margin-bottom: 5px;
 }
 
 a {
-	color: #FFCC66;
+	color: #000000;
 	text-decoration: none;
 }
 
@@ -123,7 +129,7 @@ a {
 	width: 97%;
 	border: 1px solid;
 	padding: 8px;
-	background: #000;
+	background: #333534;
 }
 
 #header {
@@ -133,7 +139,7 @@ a {
 #loginBar {
 	display: block;
 	padding: 5px 20px;
-	width: 70%;
+	width: auto;
 	margin: auto;
 }
 
@@ -147,7 +153,7 @@ a {
 	clear: both;
 	min-height: 100%; /* Voir commentaire sur html et body plus haut */
 	background: #333534;
-	width: 70%;
+	width: 90%;
 	margin: auto; /* Permet de centrer la div */
 	text-align: left;
 	padding: 5px 20px;
@@ -175,7 +181,7 @@ a {
 
 #categorie ul li a {
 	display: inline-block;
-	color: #bfbfbf;
+	color: #000000;
 	line-height: 48px;
 	cursor: pointer;
 	text-decoration: none;
@@ -183,7 +189,7 @@ a {
 }
 
 #categorie li.selected a {
-	border-bottom: 4px solid #f47321;
+	border-bottom: 4px solid #333534;
 }
 
 #txtCommentaire {
@@ -196,15 +202,15 @@ a {
 }
 
 #infoCommentaire {
-	background-color: #333534;
+	background-color: #888888;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
 #erreur {
 	display: grid;
-    color: red;
-    font-weight: bolder;
+	color: red;
+	font-weight: bolder;
 }
 
 #leftrecette {
@@ -230,17 +236,24 @@ section {
 }
 
 section div#cadre {
-	background: #000;
+	background: #bfbfbf;
 	float: left;
-	height: 35vw;
+	height: 30vw;
 	margin: 1%;
 	width: 28%;
 	border: 1px solid;
 	padding: 0px 10px;
 }
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+	section div#cadre {
+	height: 365px;
+	}
+}
 
 article {
-	background: #000;
+	background: #bfbfbf;
 	border: 1px solid;
 	padding: 10px;
 	margin: 10px 0px;

@@ -57,9 +57,9 @@
 					ingredients</a>
 			</div>
 		</c:if>
-		<textarea id="txtCommentaire" name="description" rows="4"
-			placeholder="Saisir une description *" class="inputTextArea"><c:out
-				value="${recette.description}" /></textarea>
+		<input type="text" id="txtCommentaire" maxlength="60" name="description" placeholder="Saisir une description *"class="inputTextArea" value="<c:out
+				value="${recette.description}" />">
+		
 		<br />
 		<div id="rightrecette">
 			<fieldset>
@@ -73,13 +73,13 @@
 		<c:choose>
 			<c:when test="${empty recette.idRecette}">
 				<input type="submit" name="Ajouter" value="Ajouter"
-					class="submitBtn" />
+					class="primaryBtn login" />
 			</c:when>
 			<c:otherwise>
 				<input type="submit" name="update" value="Modifier"
-					class="submitBtn" />
+					class="primaryBtn login" />
 				<input type="submit" name="delete" value="Supprimer"
-					class="submitBtn" />
+					class="primaryBtn login" />
 			</c:otherwise>
 		</c:choose>
 		</form>

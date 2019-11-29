@@ -158,6 +158,34 @@ public class RecetteManager {
 		}
 		return recettes;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Recette> getAllByidTag(int id) {
+		Transaction transaction = null;
+		List < Recette > recettes = null;
+
+		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+			// start a transaction
+			transaction = session.beginTransaction();
+			// get an user object
+
+			recettes = session.createQuery("SELECT recette from Recette recette join recette.tags tag WHERE tag.id =:id").setParameter("id", id).getResultList();
+			//On recupere la moyenne de note pour la recette 
+			CommentaireManager commentaireManager = new CommentaireManager();
+			for (Recette recette : recettes) {
+				recette.setMoyNote(commentaireManager.getNoteMoy(recette.getIdRecette()));
+			}
+			// commit transaction
+			transaction.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+		return recettes;
+	}
 
 	//Fonction pour update une recette dans la base de donnée*****************************
 	public void updateRecette(Recette recette) {
